@@ -1,0 +1,20 @@
+{
+  "root": true,               // this is root eslint file (in case eslint file exists in some folder)
+  "extends": [
+    "eslint:recommended",     // recommended rules
+    "plugin:import/errors",   // errors for wrong imports
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,         // standart of js
+    "sourceType": "module"    // will use standard ES modules
+  },
+  "env": {                    // env declaration tells to expect certain global variables
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {                  // eslint standard rules override
+    "no-console": 1
+  }
+}
