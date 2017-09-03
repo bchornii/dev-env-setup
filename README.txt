@@ -8,8 +8,8 @@ Steps:
     7. configure web server(express) to serve webpack bundle (webpack-dev-middleware) from memory
     8. css via import in index.js (css handling configured in webpack.config.dev.js)
     9. auto generation of source maps as part of building process ('devtool' prop in webpack.config.dev.js)
-    10. .eslintrc.json + npm scripts for watching files (npm run lint -- --watch)    
-    
+    10. .eslintrc.json + npm scripts for watching files (npm run lint -- --watch)
+
     11. automation test
         1) testing framework - mocha
         2) assertion framework - chai, expect
@@ -19,10 +19,10 @@ Steps:
         6) when to run tests (every time you hit save)
 
     12. setting up CI server - AppVeyor and point it to github repo
-    13. setting up HTTP requests in app - fetch        
+    13. setting up HTTP requests in app - fetch
 
 Notes:
     1. bundler takes js code and package it for target environment such as a browser or node
-    2. webpack bundler includes hot-reloading web server; webpack serves files from memory which 
+    2. webpack bundler includes hot-reloading web server; webpack serves files from memory which
        speads development and could automatically update client state to reflect code changes and not
-       just js but also styles, images and html    
+       just js but also styles, images and html
