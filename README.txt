@@ -20,6 +20,14 @@ Steps:
 
     12. setting up CI server - AppVeyor and point it to github repo
     13. setting up HTTP requests in app - fetch
+    14. mock api : static json file, json server, json server + json schema faker, express
+        - json server + json schema faker
+          1) declare schema (mockDataSchema.js)
+          2) generate random data (generateMockData.js) and write it to a file
+          3) serve data via api:
+            a) start json server via npm command which works with generated db.json
+            b) create baseUrl.js module which serves function for getting actual api url address
+               and use that function in userApi.js
 
 Notes:
     1. bundler takes js code and package it for target environment such as a browser or node

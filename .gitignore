@@ -5,3 +5,6 @@ node_modules/
 
 #ignore vs code debugger configuration
 .vscode/
+
+#ignore generated json data files
+db.json

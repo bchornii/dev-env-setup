@@ -6,7 +6,7 @@
   "license": "",
   "scripts": {
     "prestart": "babel-node buildTools/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildTools/srcServer.js",
     "lint": "esw webpack.config.* src buildTools --color",
     "lint:watch": "npm run lint -- --watch",
@@ -14,7 +14,10 @@
     "localtunel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress buildTools/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildTools/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server src/api/db.json --port 3020"
   },
   "dependencies": {
     "http-server": "^0.10.0",
