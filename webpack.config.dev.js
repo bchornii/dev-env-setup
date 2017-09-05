@@ -1,4 +1,5 @@
 import path from 'path';                    // 'path' package comes with nodejs
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -18,8 +19,14 @@ export default {
     filename: 'bundle.js'
   },
 
-  plugins: [],                              // can optionally define some plugins (hot reload, linting)
-
+  plugins: [                                // can optionally define some plugins (hot reload, linting)
+      // Create HTML file that includes
+      // reference to bundled JS
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        inject: true
+    })
+  ],
                                             // we need to tell webpack file types to handle
                                             // webpack calls this concept - loaders
                                             // loaders teaches webpack how to handle different file types

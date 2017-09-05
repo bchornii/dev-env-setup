@@ -1,24 +1,18 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
-import webpack from 'webpack';
-import webpackConfig from '../webpack.config.dev'
+import compression from 'compression';
 
 /*eslint-disable no-console*/
 
 const port = 3100;
 const app = express();
-const compiler = webpack(webpackConfig);   // returns reference to webpack compiler
 
-// integrate webpack with express
-// middleware serves files emitted from webpack over a connect server (express)
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,                                  // not to display any special info
-  publicPath: webpackConfig.output.publicPath    // path from webpack.config.dev.js
-}));
+app.use(compression());
+app.use(express.static('dist'));
 
 app.get('/', function(req, resp){
-    resp.sendFile(path.join(__dirname, '../src/index.html'));
+    resp.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.get('/users', function(req, resp){

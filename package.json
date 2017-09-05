@@ -17,7 +17,11 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildTools/generateMockData",
     "prestart-mockapi": "npm run generate-mock-data",
-    "start-mockapi": "json-server src/api/db.json --port 3020"
+    "start-mockapi": "json-server src/api/db.json --port 3020",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildTools/build.js",
+    "postbuild": "babel-node buildTools/distServer.js"
   },
   "dependencies": {
     "http-server": "^0.10.0",
