@@ -16,10 +16,10 @@ export default {
 
   target: 'web',                            // in case of running in node could change this setting to 'node'
 
-                                            // here we tell webpack where it should create our dev bundle
-  output: {                                 // webpack won't generate any physical files for dev build
-    path: path.resolve(__dirname, 'dist'),  // it will serve our build from memory
-    publicPath: '/',                        // we specify path and name to simulate physical file existance
+                                            // here we tell webpack where it should create our bundle
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
 

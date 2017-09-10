@@ -24,7 +24,6 @@
     "postbuild": "babel-node buildTools/distServer.js"
   },
   "dependencies": {
-    "http-server": "^0.10.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {

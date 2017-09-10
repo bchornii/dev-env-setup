@@ -3,7 +3,7 @@ export const schema = {
   "properties": {
     "users": {
       "type": "array",
-      "minItems": 3,
+      "minItems": 6,
       "maxItems": 10,
       "items": {
         "type": "object",
